@@ -1,0 +1,122 @@
+/****************TAG SELECTORS****************/
+body {
+    background: #DBE2EF;
+}
+
+h3,
+h5 {
+    color: #3F72AF;
+}
+
+hr {
+    margin: 0rem 0;
+}
+
+/****************Global Rules****************/
+.paddingTop15 {
+    padding-top: 15px;
+}
+
+.paddingLeft10 {
+    padding-left: 10px;
+}
+
+.paddingLeft20 {
+    padding-left: 20px;
+}
+
+.paddingBottom25 {
+    padding-bottom: 25px;
+}
+
+.width25 {
+    width: 25px;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.explanatoryTextColor {
+    color: #3F72AF;
+    font-size: 0.875em;
+}
+
+.leftInputGroupRules {
+    text-align: center;
+    margin-left: 15px;
+}
+
+.middleInputGroupRules {
+    text-align: center;
+}
+
+.rightInputGroupRules {
+    text-align: center;
+    margin-right: 15px;
+}
+
+/* Header Rules */
+.header {
+    text-align: center;
+    background: #3F72AF;
+    color: #F9F7F7;
+    font-size: 20px;
+    width: 100%;
+    contain: content;
+}
+
+.peopleCertLogo {
+    float: right;
+    width: 100%;
+}
+
+.imgDiv {
+    width: 8%;
+    contain: layout;
+    float: right;
+}
+
+.info {
+    contain: layout;
+}
+
+/* Bootstrap elements Override Rules */
+.btn-primary {
+    background-color: #3F72AF;
+    color: #F9F7F7;
+    border: 0px;
+}
+
+.btn-primary:hover {
+    background-color: #112D4E !important;
+    color: #F9F7F7 !important;
+}
+
+.btn-outline-primary {
+    border: 0px;
+    color: #3F72AF;
+}
+
+.btn-outline-primary:hover {
+    background-color: #112D4E !important;
+    color: #F9F7F7 !important;
+}
+
+.table {
+    border: 1px;
+    text-align: center;
+    float: right;
+}
+
+.card {
+    background-color: #DBE2EF;
+}
+
+.card-header {
+    color: #3F72AF;
+}
+
+.form-control-plaintext {
+    color: #3F72AF;
+}

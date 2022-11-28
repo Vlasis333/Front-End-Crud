@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- jQuery min -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- External Files Added -->
+    <link rel="icon" href="../Assignment 1/images/assignment 1.ico">
+    <link rel="stylesheet" href="../Assignment 1/styles/site.css">
+    <title>Assignment 1</title>
+</head>
+
+<body>
+    <!-- Header DIV -->
+    <div class="header">
+        <div class="imgDiv">
+            <a href="https://www.peoplecert.org/" target="_blank">
+                <img class="peopleCertLogo" src="../Assignment 1/images/peoplecert.png" alt="PeopleCert Logo">
+            </a>
+        </div>
+        <div class="info">
+            <h2>Vlasios Mavraganis</h2>
+            <p>
+                <strong>Coding BootCamp</strong>
+                <br>
+                <strong>Assignment 1</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation bar-->
+    <div>
+        <h3 class="paddingLeft10">Navigation Options&nbsp;</h3>
+        <div class="paddingLeft10">
+            <button id="CandidatesNavBtn" class="btn btn-primary">Candidates&nbsp;
+                <img src="../Assignment 1/images/candidates.png" alt="candidates.png" class="width25">
+            </button>
+            <button id="CertificationsNavBtn" class="btn btn-outline-primary" type="button" role="tab">Certifications
+                <img src="../Assignment 1/images/certificates.png" alt="certificates.png" class="width25">
+            </button>
+        </div>
+
+        <div id="candidateTab">
+            <!-- Navigation Buttons on View or Edit a Candidate -->
+            <div class="paddingBottom25">
+                <h3 class="paddingLeft10">Candidates Menu</h3>
+                <div class="paddingLeft10">
+                    <button id="listOfCandidatesBtn" class="btn btn-primary" type="button">List of
+                        Candidates</button>
+                    <button id="candidateInfoBtn" class="btn btn-outline-primary" type="button">Add/Edit a
+                        Candidate</button>
+                </div>
+            </div>
+
+            <!-- Main Candidate Page -->
+            <div id="mainCandidateListDiv">
+                <table id="listOfCandidates" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Candidate number</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Date of Birth</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="listOfCandidatesTbody">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add/Edit Page -->
+            <div id="infoCandidateDiv">
+                <form id="candidateForm" action="index.html" method="GET" class="needs-validation" novalidate>
+                    <h5 id="submitCandidateHeader" class="paddingLeft20"></h5>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <!-- General Info -->
+                            <div class="card leftInputGroupRules">
+                                <ul class="list-group list-group-flush">
+                                    <h5 class="card-header">General Info</h5>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="candidate_id">Candidate number</label>
+                                            <input id="candidate_id" name="candidate_id"
+                                                class="form-control-plaintext textAlignCenter" type="number" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="first_name">First Name</label>
+                                            <input id="first_name" name="first_name" class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="middle_name">Middle Name</label>
+                                            <input id="middle_name" name="middle_name" class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last_name">Last Name</label>
+                                            <input id="last_name" name="last_name" class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="gender">Gender</label>
+                                            <select id="gender" name="gender" type="text" class="form-select"
+                                                aria-label="Default select example">
+                                                <option selected value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="native_language">Native Language</label>
+                                            <select id="native_language" name="native_language" type="text"
+                                                class="form-select" aria-label="Default select example">
+                                                <option>Greek</option>
+                                                <option selected>English</option>
+                                                <option>German</option>
+                                                <option>French</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="birthday">Birth Date</label>
+                                            <input id="birthday" name="birthday" class="form-control" type="date"
+                                                value="1990-12-01">
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <!-- Location Info -->
+                            <div class="card middleInputGroupRules">
+                                <ul class="list-group list-group-flush">
+                                    <h5 class="card-header">Location Info</h5>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="address">Address</label>
+                                            <input id="address" name="address" class="form-control" type="text"
+                                                placeholder="Taratatzoum 24">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address2">Address Line 2</label>
+                                            <input id="address2" name="address2" class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="residence">Country of Residence</label>
+                                            <input id="residence" name="residence" class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="province">State / Territory / Province</label>
+                                            <input id="province" name="province" class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="town">Town / City</label>
+                                            <input id="town" name="town" class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="postal_code">Postal Code</label>
+                                            <input id="postal_code" name="postal_code" class="form-control"
+                                                type="number">
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <!-- Contact Info -->
+                            <div class="card middleInputGroupRules">
+                                <ul class="list-group list-group-flush">
+                                    <h5 class="card-header">Contact Info</h5>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input id="email" name="email" class="form-control" type="email"
+                                                placeholder="name@example.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="landline_number">Landline Number</label><span>(</span><span
+                                                class="explanatoryTextColor">+XX XXX XXX XXXX</span><span>)</span>
+                                            <input id="landline_number" name="landline_number" class="form-control"
+                                                type="tel">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mobile_number">Mobile
+                                                Number&nbsp;</label><span>(</span><span class="explanatoryTextColor">+XX
+                                                XXX XXX XXXX</span><span>)</span>
+                                            <input id="mobile_number" name="mobile_number" class="form-control"
+                                                type="tel" value="+30">
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <!-- Id Info -->
+                            <div class="card rightInputGroupRules">
+                                <ul class="list-group list-group-flush">
+                                    <h5 class="card-header">Id Card Info</h5>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="photo_id_type">Photo ID Type</label>
+                                            <select id="photo_id_type" name="photo_id_type" type="text"
+                                                class="form-select" aria-label="Default select example">
+                                                <option selected>Native tribal cards</option>
+                                                <option>Passport</option>
+                                                <option>Driver's licenses</option>
+                                                <option>Company-issued ID cards</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photo_id_number">Photo ID Number</label>
+                                            <input id="photo_id_number" name="photo_id_number" class="form-control"
+                                                type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photo_id_issue_date">Photo ID Issue Date</label>
+                                            <input id="photo_id_issue_date" name="photo_id_issue_date"
+                                                class="form-control" type="date" value="1990-12-01">
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col col-lg-1 paddingTop15 paddingBottom25">
+                                <input id="submitCandidate" class="btn btn-primary" type="submit"
+                                    onclick="saveCandidate(event)">
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div id="certificateTab">
+            <!-- Navigation Buttons on View or Edit a Certificate -->
+            <div class="paddingBottom25">
+                <h3 class="paddingLeft10">Certificates Menu</h3>
+                <div class="paddingLeft10">
+                    <button id="listOfCertificatesBtn" class="btn btn-primary" type="button">List of
+                        Certificates</button>
+                    <button id="certificateInfoBtn" class="btn btn-outline-primary" type="button" disabled>Add/Edit a
+                        Certificate</button>
+                </div>
+            </div>
+
+            <!-- Main Certificate Page -->
+            <div id="mainCertificateListDiv">
+                <table id="listOfCertificates" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title of Certificate</th>
+                            <th scope="col">Candidate First / Last Name</th>
+                            <th scope="col">Candidate Number</th>
+                            <th scope="col">Candidate Score</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="listOfCertificatesTBody">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add/Edit Page -->
+            <div id="infoCertificateFormDiv">
+                <form id="certificateForm" action="index.html" method="GET" class="needs-validation" novalidate>
+                    <h5 id="submitCertificateHeader" class="paddingLeft20"></h5>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <!-- Certificate General Info -->
+                            <div class="card leftInputGroupRules">
+                                <ul class="list-group list-group-flush">
+                                    <h5 class="card-header">General Info</h5>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="certificate_title">Title of Certificate</label>
+                                            <input id="certificate_title" name="certificate_title" class="form-control"
+                                                type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <!-- cc = candidate's certificate -->
+                                            <label for="cc_first_name">First Name</label>
+                                            <input id="cc_first_name" name="cc_first_name"
+                                                class="form-control-plaintext textAlignCenter" type="text"
+                                                value="Vlasios" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cc_middle_name">Middle Name</label>
+                                            <input id="cc_middle_name" name="cc_middle_name"
+                                                class="form-control-plaintext textAlignCenter" type="text" value=""
+                                                readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cc_last_name">Last Name</label>
+                                            <input id="cc_last_name" name="cc_last_name"
+                                                class="form-control-plaintext textAlignCenter" type="text"
+                                                value="Mavraganis" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cc_candidate_id">Candidate Number</label>
+                                            <input id="cc_candidate_id" name="cc_candidate_id"
+                                                class="form-control-plaintext textAlignCenter" type="number" value=1
+                                                readonly>
+                                        </div>
+                                        <label for="certificate_id">Certificate Id</label>
+                                        <input id="certificate_id" name="certificate_id"
+                                            class="form-control-plaintext textAlignCenter" type="number" readonly>
+                                        <div class="form-group">
+                                            <label for="exam_date">Examination Date</label>
+                                            <input id="exam_date" name="exam_date" class="form-control" type="date"
+                                                value="1990-12-01">
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <!-- Assessment Info -->
+                            <div class="card middleInputGroupRules">
+                                <ul class="list-group list-group-flush">
+                                    <h5 class="card-header">Assessment Info and Results</h5>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="assessment_code">Assessment Test Code</label>
+                                            <select id="assessment_code" name="assessment_code" type="text"
+                                                class="form-select" aria-label="Default select example">
+                                                <option selected>CB-17</option>
+                                                <option>EG-P</option>
+                                                <option>IT-GOV</option>
+                                                <option>DevOps</option>
+                                                <option>Nursing</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="score_report_date">Score Report Date</label>
+                                            <input id="score_report_date" name="score_report_date" class="form-control"
+                                                type="date" value="1990-12-01">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="candidate_score">Candidate Score</label>
+                                            <input id="candidate_score" name="candidate_score" class="form-control"
+                                                type="number">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="maximum_score">Maximum Score</label>
+                                            <input id="maximum_score" name="maximum_score" class="form-control"
+                                                type="number">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="percentage_score">Percentage Score (%)</label>
+                                            <input id="percentage_score" name="percentage_score" class="form-control"
+                                                type="number" placeholder="%">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="assessment_result_label">Assessment Result Label</label>
+                                            <select id="assessment_result_label" name="assessment_result_label"
+                                                class="form-select" type="text" aria-label="Default select example">
+                                                <option selected>Passed</option>
+                                                <option>Failed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <!-- Topic Info -->
+                            <div class="card rightInputGroupRules">
+                                <ul class="list-group list-group-flush">
+                                    <h5 class="card-header">Assessment Topic Info</h5>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <!-- SOS πρεπει να το δω οταν μαθω για τα arrays και πως να το φτιαξω σωστα -->
+                                            <label for="topic_desc">Topic Description</label>
+                                            <input id="topic_desc" name="topic_desc" class="form-control"
+                                                type="text"><br>
+                                            <label for="awarded_marks">Number of Awarded Marks</label>
+                                            <input id="awarded_marks" name="certificate_id" class="form-control"
+                                                type="number"><br>
+                                            <label for="possible_marks">Number of Possible Marks</label>
+                                            <input id="possible_marks" name="possible_marks" class="form-control"
+                                                type="number"><br>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col col-lg-1 paddingTop15 paddingBottom25">
+                                <input id="submitCertificate" class="btn btn-primary" type="submit"
+                                    onclick="saveCertificate(event)">
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mainModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div id="modalData" class="modal-body">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close Window</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="textAlignCenter paddingTop15">
+            <em>&#169;Copyright 2022 made by Vlasios Mavraganis</em>
+        </div>
+    </footer>
+
+    <script src="../Assignment 1/javasccript/index.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
